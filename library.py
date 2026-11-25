@@ -1,4 +1,5 @@
 from student import *
+from book import *
 
 
 class Library:
@@ -44,6 +45,8 @@ class Library:
                 book1 = book
                 break
             return book1
+
+        
     def searchStudent(self, studentID):
         student1 = None
         for student in self.students:
@@ -51,11 +54,17 @@ class Library:
                 student1 = student
                 break
             return student1
+
+
+        
     def borrowBook(self, studentID, bookID):
         student = self.searchStudent(studentID)
         book = self.searchBook(bookID)
         if student and book:
             student.borrowBook(book)
+
+
+
     def returnBook(self, studentID, bookID):
         student = self.searchStudent(studentID)
         book = self.searchBook(bookID)
